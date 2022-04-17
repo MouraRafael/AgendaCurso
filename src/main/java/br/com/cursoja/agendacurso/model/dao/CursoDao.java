@@ -101,7 +101,7 @@ public class CursoDao extends Conexao {
 			ps.setLong(1, nomebusca);
 			
 			ResultSet rs = ps.executeQuery();
-			Curso c;
+			
 			
 			if(rs.next()) {
 				curso = new Curso();

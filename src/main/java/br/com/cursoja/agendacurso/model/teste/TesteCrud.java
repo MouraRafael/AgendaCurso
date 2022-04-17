@@ -3,7 +3,6 @@ package br.com.cursoja.agendacurso.model.teste;
 import br.com.cursoja.agendacurso.entidade.Curso;
 import br.com.cursoja.agendacurso.model.dao.Conexao;
 import br.com.cursoja.agendacurso.model.dao.CursoDao;
-
 public class TesteCrud {
 
 	public static void main(String[] args) {

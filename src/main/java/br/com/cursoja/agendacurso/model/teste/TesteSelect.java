@@ -1,8 +1,9 @@
-package br.com.cursoja.agendacurso.entidade;
+package br.com.cursoja.agendacurso.model.teste;
 
 
 import java.util.ArrayList;
 
+import br.com.cursoja.agendacurso.entidade.Curso;
 import br.com.cursoja.agendacurso.model.dao.Conexao;
 import br.com.cursoja.agendacurso.model.dao.CursoDao;
 

@@ -33,6 +33,40 @@ public class ProfessorDao extends Conexao{
 
     }
 
+    // busca por id
+    public Professor buscar (long idbusca){
+        Professor prof = null;
 
-   
+        String sql = "SELECT idprofessor, nome, celular, valorhora FROM professor"
+                        +" WHERE idprofessor = ?";
+
+        try{
+            PreparedStatement ps = getConexao().prepareStatement(sql);
+            ps.setLong(1,idbusca);
+
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){
+                prof = new Professor();
+                prof.setId(rs.getLong("idprofessor"));
+                prof.setNome(rs.getString("nome"));
+                prof.setCelular(rs.getString("celular"));
+                prof.setValorHora(rs.getDouble("valorhora"));
+            }
+
+        }catch(SQLException e){
+            System.out.println("Erro ao listar");
+            
+        }finally{
+            fecharConexao();
+        }
+
+
+
+
+        return prof;
+    }
+
+
+    
 }

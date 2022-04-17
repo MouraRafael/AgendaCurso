@@ -13,18 +13,18 @@ public class TesteSelect {
 		
 		CursoDao dao = new CursoDao();
 		
-		ArrayList<Curso> cursos = dao.listar("");
+		/*ArrayList<Curso> cursos = dao.listar("");
 		
 		for(Curso a : cursos) {
 			System.out.println(a.getNome());
-		}
+		}*/
 		
 		
 		Curso unico = dao.buscar(1);
 		
-		System.out.println(unico.getNome());
+		System.out.println("esto es: "+unico.getNome());
 		
 		
-		dao.excluir(unico);
+		
 	}
 }

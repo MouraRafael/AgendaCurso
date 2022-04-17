@@ -11,7 +11,7 @@
 <body>
 	<h1>Olá Mundo, agora na "web"</h1>
 	<p>Agora estamos todos</p>
-	
+	<a href="cadastrarcurso.jsp">Cadastrar</a>
 	<%
 	Conexao c = new Conexao();
 	c.getConexao();

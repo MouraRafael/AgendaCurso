@@ -1,8 +1,8 @@
 package br.com.cursoja.agendacurso.model.teste;
 
+import br.com.cursoja.agendacurso.entidade.Curso;
 import br.com.cursoja.agendacurso.model.dao.Conexao;
 import br.com.cursoja.agendacurso.model.dao.CursoDao;
-import br.com.cursosja.agendacurso.Curso;
 
 public class TesteCrud {
 
@@ -28,13 +28,16 @@ public class TesteCrud {
 		
 		
 		Curso cursoAlterar = new Curso();
-		cursoAlterar.setNome("Office");
+		cursoAlterar.setNome("Offices");
 		cursoAlterar.setValor(500);
 		cursoAlterar.setId(1);
 		
 		dao.alterar(cursoAlterar);
 		
 		
+		
+		System.out.print(cursoAlterar.getId()+"\n \n \n");
+		dao.excluir(cursoAlterar);
 		
 		
 		

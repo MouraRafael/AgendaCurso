@@ -1,4 +1,4 @@
-package br.com.cursosja.agendacurso;
+package br.com.cursoja.agendacurso.entidade;
 
 
 import java.util.ArrayList;
@@ -22,5 +22,8 @@ public class TesteSelect {
 		Curso unico = dao.buscar(1);
 		
 		System.out.println(unico.getNome());
+		
+		
+		dao.excluir(unico);
 	}
 }

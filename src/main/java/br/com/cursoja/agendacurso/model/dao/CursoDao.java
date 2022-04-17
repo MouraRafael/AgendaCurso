@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import br.com.cursosja.agendacurso.Curso;
+import br.com.cursoja.agendacurso.entidade.Curso;
 
 public class CursoDao extends Conexao {
 	public void cadastrar (Curso c) {
@@ -120,6 +120,24 @@ public class CursoDao extends Conexao {
 		}
 		
 		return curso;
+	}
+	//Delete
+	public void excluir(Curso c) {
+		String sql = "DELETE FROM curso WHERE idcurso = ?";
+		
+		try {
+			PreparedStatement ps = getConexao().prepareStatement(sql);
+			ps.setLong(1, c.getId());
+			
+			ps.execute();
+		}
+		catch(SQLException e) {
+			System.out.println("Erro na exclus�o");
+			e.printStackTrace();
+		}
+		finally {
+			fecharConexao();
+		}
 	}
 }
 

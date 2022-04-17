@@ -1,4 +1,4 @@
-package br.com.cursosja.agendacurso;
+package br.com.cursoja.agendacurso.entidade;
 
 public class Professor {
 

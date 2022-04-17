@@ -67,6 +67,40 @@ public class ProfessorDao extends Conexao{
         return prof;
     }
 
+    //buscageral R
+    public ArrayList<Professor> listar (String nomebusca){
+        ArrayList<Professor> listaprof = new ArrayList<Professor>();
 
+        String sql =    "SELECT idprofessor, nome, celular, valorhora FROM professor"
+                        +" WHERE nome LIKE ?";
+
+        try{
+
+            PreparedStatement ps = getConexao().prepareStatement(sql);
+            ps.setString(1, "%"+nomebusca+"%");
+
+            ResultSet rs = ps.executeQuery();
+
+            Professor prof;
+
+            while(rs.next()){
+                prof = new Professor();
+                prof.setId(rs.getLong("idprofessor"));
+                prof.setNome(rs.getString("nome"));
+                prof.setCelular(rs.getString("celular"));
+                prof.setValorHora(rs.getDouble("valorhora"));
+
+                listaprof.add(prof);
+            }
+
+        }catch( SQLException e){
+            System.out.println("Erro de Listagem");
+        }finally{
+            fecharConexao();
+        }
+        
+
+        return listaprof;
+    }
     
 }

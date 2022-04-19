@@ -17,9 +17,12 @@
 	<table>
 		<thead>
 			<th>Id</th>
-			<th>Id</th>
-			<th>Id</th>
+			<th>Nome</th>
+			<th>Valor</th>
 		</thead>
+		<tbody>
+		
+		</tbody>
 	</table>
 </body>
 </html>

@@ -29,4 +29,24 @@
     <servlet-name>InicioAlteraCurso</servlet-name>
     <url-pattern>/InicioAlteraCurso</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExecutaAlteraCurso</display-name>
+    <servlet-name>ExecutaAlteraCurso</servlet-name>
+    <servlet-class>br.com.cursoja.agendacurso.view.ExecutaAlteraCurso</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExecutaAlteraCurso</servlet-name>
+    <url-pattern>/ExecutaAlteraCurso</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExcluirCurso</display-name>
+    <servlet-name>ExcluirCurso</servlet-name>
+    <servlet-class>br.com.cursoja.agendacurso.view.ExcluirCurso</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExcluirCurso</servlet-name>
+    <url-pattern>/ExcluirCurso</url-pattern>
+  </servlet-mapping>
 </web-app>

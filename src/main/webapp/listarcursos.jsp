@@ -31,7 +31,7 @@
 				<td><%= fmt.format(c.getValor()) %></td>
 				<td>
 				<a href="InicioAlteraCurso?id=<%=c.getId() %>">Alterar</a>
-				Excluir
+				<a href="ExcluirCurso?id=<%= c.getId() %>" onclick="return confirm('Deseja realmente deletar o curso <%= c.getNome() %>?')">Excluir</a>
 				</td>
 			</tr>
 	

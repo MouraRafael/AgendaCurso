@@ -59,4 +59,14 @@
     <servlet-name>CadastraProfServlet</servlet-name>
     <url-pattern>/CadastraProfServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InicioAlteraProfessor</display-name>
+    <servlet-name>InicioAlteraProfessor</servlet-name>
+    <servlet-class>br.com.cursoja.agendacurso.view.InicioAlteraProfessor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InicioAlteraProfessor</servlet-name>
+    <url-pattern>/InicioAlteraProfessor</url-pattern>
+  </servlet-mapping>
 </web-app>

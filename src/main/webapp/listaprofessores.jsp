@@ -40,7 +40,8 @@
                     <td><%= p.getCelular() %></td>
                     <td><%= fmt.format(p.getValorHora()) %></td>
                     <td>
-                        Alterar | 
+                        <a href="InicioAlteraProfessor?id=<%= p.getId()%>">Alterar </a>
+                        | 
                         Excluir
                     </td>
                   </tr>

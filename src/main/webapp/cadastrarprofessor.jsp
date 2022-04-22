@@ -14,7 +14,7 @@
 <body>
     <div class="container col-6">
         <fieldset>
-            <legend>Cadastro de Funcionarios</legend>
+            <legend>Cadastro de Professor</legend>
             <form action="CadastraProfServlet" method="post">
                 <div class="form-group">
                     <label for="nome" class="form-label">Nome do Professor</label>

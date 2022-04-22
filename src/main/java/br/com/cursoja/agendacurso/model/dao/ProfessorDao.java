@@ -102,5 +102,31 @@ public class ProfessorDao extends Conexao{
 
         return listaprof;
     }
+
+    // Update U
+    public void alterar (Professor p){
+        String sql = "UPDATE professor SET "
+                        +"nome = ?, "
+                        +"celular = ?, "
+                        +"valorhora = ? "
+                        +"WHERE idprofessor = ? ";
+
+        try{
+            PreparedStatement ps = getConexao().prepareStatement(sql);
+
+            ps.setString(1, p.getNome());
+            ps.setString(2, p.getCelular());
+            ps.setDouble(3, p.getValorHora());
+            ps.setLong(4, p.getId());
+
+            ps.execute();
+
+        }catch(SQLException e){
+            System.out.println("Erro ao atualizar os dados");
+            e.printStackTrace();
+        }finally{
+            fecharConexao();
+        }
+    }
     
 }

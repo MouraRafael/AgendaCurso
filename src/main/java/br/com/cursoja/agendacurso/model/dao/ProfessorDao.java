@@ -128,5 +128,23 @@ public class ProfessorDao extends Conexao{
             fecharConexao();
         }
     }
+
+    // Delete D
+
+    public void excluir (Professor p){
+        String sql = "DELETE FROM professor Where idprofessor = ?";
+
+        try{
+            PreparedStatement ps = getConexao().prepareStatement(sql);
+            
+            ps.setLong(1, p.getId());
+
+            ps.execute();
+        }
+        catch(SQLException e){
+            System.out.println("Erro ao Excluir Professor.");
+            e.printStackTrace();
+        }
+    }
     
 }

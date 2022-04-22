@@ -10,10 +10,10 @@ public class testeProf {
 	public static void main(String[] args) {
 		Professor pp = new Professor();
 		
-		/*p.setId(2);
-		p.setNome("Paulo");
-		p.setCelular("21 88455555");
-		p.setValorHora(1200);*/
+		/*pp.setId(2);
+		pp.setNome("Paulo");
+		pp.setCelular("21 8845-5556");
+		pp.setValorHora(1200);*/
 		
 		ProfessorDao dao = new ProfessorDao();
 		
@@ -34,8 +34,13 @@ public class testeProf {
 		}*/
 		
 		
-		//Teste UPDATE (U)
+		//Teste UPDATE (U)(ok)
+		/*dao.alterar(pp);*/
 		
+		
+		//Teste Delete (D)(ok)
+		/*pp.setId(3);
+		dao.excluir(pp);*/
 		
 	
 	}

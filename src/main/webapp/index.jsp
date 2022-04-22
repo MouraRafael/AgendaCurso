@@ -14,6 +14,7 @@
 	<a href="cadastrarcurso.jsp">Cadastrar</a>
 	<a href="listarcursos.jsp">Listar</a>
 	<a href="cadastrarprofessor.jsp">Cadastar Professor</a>
+	<a href="listaprofessores.jsp">Listagem de Professores</a>
 	<%
 	Conexao c = new Conexao();
 	c.getConexao();

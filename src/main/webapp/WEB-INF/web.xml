@@ -69,4 +69,14 @@
     <servlet-name>InicioAlteraProfessor</servlet-name>
     <url-pattern>/InicioAlteraProfessor</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExecutaAlteraProfessor</display-name>
+    <servlet-name>ExecutaAlteraProfessor</servlet-name>
+    <servlet-class>br.com.cursoja.agendacurso.view.ExecutaAlteraProfessor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExecutaAlteraProfessor</servlet-name>
+    <url-pattern>/ExecutaAlteraProfessor</url-pattern>
+  </servlet-mapping>
 </web-app>

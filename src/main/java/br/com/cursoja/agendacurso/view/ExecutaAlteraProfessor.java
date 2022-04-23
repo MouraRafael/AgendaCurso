@@ -8,19 +8,19 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import br.com.cursoja.agendacurso.controller.CursoController;
-import br.com.cursoja.agendacurso.entidade.Curso;
+import br.com.cursoja.agendacurso.controller.ProfessorController;
+import br.com.cursoja.agendacurso.entidade.Professor;
 
 /**
- * Servlet implementation class ExecutaAlteraCurso
+ * Servlet implementation class ExecutaAlteraProfessor
  */
-public class ExecutaAlteraCurso extends HttpServlet {
+public class ExecutaAlteraProfessor extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ExecutaAlteraCurso() {
+    public ExecutaAlteraProfessor() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,32 +38,40 @@ public class ExecutaAlteraCurso extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String nome = request.getParameter("nomeCurso");
-		String strValor = request.getParameter("mensalidade");
-		String strId = request.getParameter("id");
-		
-		
-		double 	valor 	= 0.00;
-		long 	id		= 0;
-		try {
-			valor = Double.parseDouble(strValor);
-			id = Long.parseLong(strId);
-			
-		}catch(Exception e) {
-			System.out.println("Erro na Convers�o");
+		//doGet(request, response);
+		String nome = request.getParameter("nomeprof");
+		String celular = request.getParameter("celular");
+		String strvhora = request.getParameter("valorhora");
+		String strid = request.getParameter("id");
+
+		double 	valorhora 	= 0.00;
+		long 	id			= 0;
+
+		try{
+			valorhora	= Double.parseDouble(strvhora);
+			id			= Long.parseLong(strid);
+		}catch(Exception e){
+			System.out.println("Erro na conversão");
 		}
+
+		Professor p = new Professor();
+		p.setId(id);
+		p.setCelular(celular);
+		p.setNome(nome);
+		p.setValorHora(valorhora);
 		
-		Curso c = new Curso();
-		c.setId(id);
-		c.setNome(nome);
-		c.setValor(valor);
+		System.out.println(p.getId()+" \n "
+				+ "\n"
+				+ "\n "+p.getNome());
 		
-		CursoController controller = new CursoController();
-		
-		controller.alterar(c);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("listarcursos.jsp");
-		rd.forward(request, response);
+		ProfessorController controller = new ProfessorController();
+
+		controller.alterar(p);
+
+		RequestDispatcher rd = request.getRequestDispatcher("listaprofessores.jsp");
+		rd.forward(request,response);
+
+
 	}
 
 }

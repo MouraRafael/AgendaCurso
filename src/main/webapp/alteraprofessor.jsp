@@ -21,7 +21,7 @@
     <div class="container col-6">
         <fieldset>
             <legend>Editar Dados do Professor</legend>
-            <form action="CadastraProfServlet" method="post">
+            <form action="ExecutaAlteraProfessor" method="post">
                 <div class="form-group">
                     <label for="nome" class="form-label">Nome do Professor</label>
                     <input type="text" class="form-control" id="nome" name="nomeprof" placeholder="Digite o nome do professor" value="<%= professoralterar.getNome() %>" required>
@@ -34,7 +34,7 @@
                     <label for="vhora" class="form-label">Valor Hora</label>
                     <input type="number" step="0.01" class="form-control" id="vhora" name="valorhora" placeholder="Digite o Valor/Hora do professor" value="<%= professoralterar.getValorHora() %>" required>
                 </div>
-                <button class="btn btn-dark my-2" type="submit">Cadastrar</button>
+                <button class="btn btn-dark my-2" type="submit" name="id" value="<%= professoralterar.getId() %>"">Cadastrar</button>
 
             </form>
         </fieldset>

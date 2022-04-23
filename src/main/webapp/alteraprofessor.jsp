@@ -18,9 +18,27 @@
     <%
         Professor professoralterar = (Professor) request.getAttribute("professor");
     %>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="index.jsp">Principal</a>
+                  <a class="nav-link" href="cadastrarprofessor.jsp">Cadastrar Professores</a>
+                  <a class="nav-link" href="listaprofessores.jsp">Listar Professores</a>
+                  
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
     <div class="container col-6">
         <fieldset>
-            <legend>Editar Dados do Professor</legend>
+            <legend>Editar Dados do Professor: <strong><%= professoralterar.getNome() %></strong></legend>
             <form action="ExecutaAlteraProfessor" method="post">
                 <div class="form-group">
                     <label for="nome" class="form-label">Nome do Professor</label>
@@ -34,7 +52,7 @@
                     <label for="vhora" class="form-label">Valor Hora</label>
                     <input type="number" step="0.01" class="form-control" id="vhora" name="valorhora" placeholder="Digite o Valor/Hora do professor" value="<%= professoralterar.getValorHora() %>" required>
                 </div>
-                <button class="btn btn-dark my-2" type="submit" name="id" value="<%= professoralterar.getId() %>"">Cadastrar</button>
+                <button class="btn btn-dark my-2" type="submit" name="id" value="<%= professoralterar.getId() %>"">Editar</button>
 
             </form>
         </fieldset>

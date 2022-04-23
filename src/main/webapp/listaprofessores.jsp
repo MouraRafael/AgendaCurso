@@ -42,7 +42,7 @@
                     <td>
                         <a href="InicioAlteraProfessor?id=<%= p.getId()%>">Alterar </a>
                         | 
-                        Excluir
+                        <a href="ExcluirProfessor?id=<%= p.getId()%>" onclick="return confirm('Tem certeza que deseja excluir o professor <%= p.getNome()%>?')">Excluir</a>
                     </td>
                   </tr>
               <% } %>

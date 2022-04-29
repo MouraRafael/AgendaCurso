@@ -12,7 +12,20 @@
 <title>Listagem de Cursos</title>
 </head>
 <body>
+	<%
+	String nomeBusca = request.getParameter("busca");
+	
+	if(nomeBusca == null){
+		nomeBusca = "";
+	}
+	%>
 	<a href="cadastrarcurso.jsp">Cadastrar</a>
+	<form method="post" action="listarcursos.jsp" value=<%= nomeBusca %>>>
+		<p>
+			<input type="text" name="busca">
+			<input type="submit" name="submit">
+		</p>
+	</form>
 	<table>
 		<thead>
 			<th>Nome</th>
@@ -21,8 +34,11 @@
 		</thead>
 		<tbody>
 	<% 
+		
+		
+	
 		CursoController controller = new CursoController();
-		ArrayList<Curso> lista = controller.listar("");
+		ArrayList<Curso> lista = controller.listar(nomeBusca);
 		DecimalFormat fmt = new DecimalFormat("###,##0.00"); // A tralha marca como opcional
 		for (Curso c : lista) {
 	%>	

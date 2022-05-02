@@ -13,7 +13,16 @@ public class TurmaDao extends Conexao {
 	public ArrayList<Turma> listar(){
 		ArrayList<Turma> lista = new ArrayList<Turma>();
 		try {
-			String sql = "Select * from turma ORDER BY datainicio";
+			String sql = "SELECT t.*,"
+					+ " c.nome nomecurso, "
+					+ "c.valor, "
+					+ "p.nome nomeprofessor, "
+					+ "p.celular, "
+					+ "p.valorhora "
+					+ "FROM turma AS t "
+					+ "JOIN curso c on c.idcurso = t.curso_id "
+					+ "JOIN professor p ON p.idprofessor = t.professor_id "
+					+ "order by datainicio;";
 			
 			PreparedStatement ps = getConexao().prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
@@ -30,10 +39,15 @@ public class TurmaDao extends Conexao {
 				
 				c = new Curso();
 				c.setId(rs.getLong("curso_id"));
+				c.setNome(rs.getString("nomecurso"));
+				c.setValor(rs.getDouble("valor"));
 				t.setCurso(c);
 				
 				p = new Professor();
 				p.setId(rs.getLong("professor_id"));
+				p.setNome(rs.getString("nomeprofessor"));
+				p.setCelular(rs.getString("celular"));
+				p.setValorHora(rs.getDouble("valorhora"));
 				t.setProfessor(p);
 				
 				lista.add(t);
